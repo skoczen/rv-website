@@ -42,6 +42,7 @@ SERVER_EMAIL = DEFAULT_FROM_EMAIL
 ALLOWED_HOSTS = [
     WEBSITE_DOMAIN,
     "127.0.0.1",
+    "ronan.inkandfeet.com",
 ]
 
 RESOURCES_URL = "./static/"
