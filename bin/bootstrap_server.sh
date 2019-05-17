@@ -10,8 +10,7 @@ cd code
 git clone https://github.com/skoczen/rv-website.git website
 
 # Set up environment
-# cd website
-cd rv-website
+cd website
 touch .env
 
 cd ~
