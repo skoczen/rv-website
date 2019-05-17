@@ -1,0 +1,30 @@
+# Basics for website
+django-annoying
+django-celery-beat
+django-celery-results
+django-compressor
+django-hosts
+django-redis-cache
+django-storages
+Django
+flake8
+gunicorn
+ipython
+mock
+Pillow
+polytester>=1.2.0
+psycopg2
+pytz
+python-magic
+PyYAML>=4.2b1
+slimit
+sorl-thumbnail
+tblib
+user_agents
+
+# ML Libraries
+keras
+tensorflow
+pip
+requests
+pandas

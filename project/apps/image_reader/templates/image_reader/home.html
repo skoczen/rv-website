@@ -1,0 +1,12 @@
+{% extends "website/base.html" %}
+{% block title %}Image Reader{% endblock %}
+{% block description %}Machine-Learning reading of handwritten images.{% endblock %}
+
+{% block content %}
+    <h1>ML in Action</h1>
+    <p>Write a number on a piece of paper, take a picture, and a neural network will read the image and tell you what it thinks the number is.</p>
+    <form method="POST" enctype="multipart/form-data" action=".">
+        <input type="file" name="picture" >
+        <input type="submit" value="Submit" >
+    </form>
+{% endblock %}
