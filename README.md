@@ -36,9 +36,18 @@ docker-compose up -d
 ```bash
 cd ~/code/website
 git pull
-# If requirements.txt has changed,
-docker-compose build
 ```
+
+### Re-building the project
+
+If requirements.txt has changed or there are other significant changes:
+
+```bash
+docker-compose down
+docker-compose build
+docker-compose up -d
+```
+
 
 ### Viewing logs
 
