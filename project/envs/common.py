@@ -56,7 +56,6 @@ INSTALLED_APPS = [
 
     'image_reader',
     'home',
-    'utils',
 ]
 WSGI_APPLICATION = 'WEBSITE.wsgi.application'
 
@@ -174,10 +173,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-AUTHENTICATION_BACKENDS = [
-    'utils.backends.EncryptedEmailBackend',
-]
-
 
 # Background Workers
 CELERY_BROKER_URL = 'redis://redis:6379/0'
