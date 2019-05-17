@@ -41,7 +41,7 @@ services:
       - ".env"
     volumes:
      - ./postgres-data:/var/lib/postgresql/data
-     restart: unless-stopped
+    restart: unless-stopped
 
   redis:
     image: redis:4.0-alpine
