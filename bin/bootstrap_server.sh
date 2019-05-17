@@ -18,6 +18,7 @@ cp unison-fsmonitor /usr/bin/unison-fsmonitor
 chmod u+x /usr/bin/unison
 chmod u+x /usr/bin/unison-fsmonitor
 
+cd ~
 # Clone codebase
 mkdir -p code
 cd code

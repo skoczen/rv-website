@@ -33,10 +33,17 @@ EMAIL_SUBJECT_PREFIX = "%s " % WEBSITE_FRIENDLY_NAME
 DEFAULT_FROM_EMAIL = '%s <%s>' % (WEBSITE_FRIENDLY_NAME, WEBSITE_FROM_EMAIL)
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
+if "www." in WEBSITE_DOMAIN:
+    WWW_DOMAIN = "%s" % WEBSITE_DOMAIN
+    WEBSITE_DOMAIN = WEBSITE_DOMAIN.replace("www.", "")
+else:
+    WWW_DOMAIN = WEBSITE_DOMAIN.replace("://", "://www.")
+
+
 ALLOWED_HOSTS = [
     WEBSITE_DOMAIN,
+    WWW_DOMAIN,
     "127.0.0.1",
-    # "ronan.inkandfeet.com",
 ]
 
 RESOURCES_URL = "./static/"
