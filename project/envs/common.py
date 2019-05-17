@@ -70,7 +70,6 @@ CACHES = {
 }
 
 MIDDLEWARE = (
-    'corsheaders.middleware.CorsMiddleware',
     'django_hosts.middleware.HostsRequestMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
