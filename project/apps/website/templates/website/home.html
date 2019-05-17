@@ -3,6 +3,27 @@
 {% block description %}Welcome to my site{% endblock %}
 
 {% block content %}
-    <h1>Home</h1>
-    <p>Welcome to my website. I'm just getting it set up.</p>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <div class="jumbotron">
+                <h1 class="display-4">Hello, world!</h1>
+                <p class="lead">Welcome to my website. I'm just getting it set up.</p>
+                <p>More to come soon.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">Image Reader</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Reads hand-written numbers using Machine Learning.</h6>
+                <p class="card-text">Built using Keras, Tensorflow and the MNIST dataset.</p>
+                <a href="{% url 'image_reader:home' %}" class="card-link">Try it out</a>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

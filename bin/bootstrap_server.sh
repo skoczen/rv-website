@@ -23,6 +23,10 @@ mkdir -p code
 cd code
 # git clone https://github.com/ronanvenkat/website
 git clone https://github.com/skoczen/rv-website.git website
+mkdir -p traefik/acme/account
+touch acme.json
+chmod 600 traefik/acme/account/                                                                                                                      
+chmod 600 acme.json
 
 # Set up environment
 cd website

@@ -6,7 +6,7 @@ from django.views.static import serve
 
 urlpatterns = [
     url(r'^image_reader/', include(('image_reader.urls', 'image_reader'), namespace="image_reader")),
-    url(r'^website/', include(('website.urls', 'website'), namespace="website")),
+    url(r'^', include(('website.urls', 'website'), namespace="website")),
 ]
 
 urlpatterns += [

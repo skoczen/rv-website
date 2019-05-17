@@ -1,12 +1,112 @@
 {% extends "website/base.html" %}
 {% block title %}Image Reader{% endblock %}
 {% block description %}Machine-Learning reading of handwritten images.{% endblock %}
+{% block css %}{{block.super}}
+<style type="text/css">
+    .pixel_table {
+        font-family: monospace;
+        text-align: center;
+    }
+    .input-group {
+        margin: 20px auto;
+    }
+    .small_image {
+        border: 1px solid #DDD;
+        width: 280px;
+        height: 280px;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: -o-crisp-edges;
+        image-rendering: -webkit-optimize-contrast;
+        -ms-interpolation-mode: nearest-neighbor;
+        image-rendering: pixelated;
+    }
+    .giant_number {
+        font-size: 180px;
+    }
+    .container {
+        margin-top: 10px;
+    }
+    form {
+        /*display: block;*/
+        /*margin: 0 auto;*/
+        min-width: 300px;
+        width: 50%;
+        background: #EEE;
+        border-radius: 10px;
+        padding: 20px;
+    }
+    .lead {
+        margin-top: 20px;
+    }
+    .section {
+        margin-top: 40px;
+    }
+</style>
+{% endblock %}
 
 {% block content %}
-    <h1>ML in Action</h1>
-    <p>Write a number on a piece of paper, take a picture, and a neural network will read the image and tell you what it thinks the number is.</p>
-    <form method="POST" enctype="multipart/form-data" action=".">
-        <input type="file" name="picture" >
-        <input type="submit" value="Submit" >
-    </form>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <div class="jumbotron">
+                <h1 class="display-4">Machine Learning in Action</h1>
+                <p class="lead">Try out a neural network for reading numbers.</p>
+            </div>
+        </div>
+    </div>
+    {% if submitted %}
+    {# The user just uploaded a file #}
+    <div class="row">
+        <div class="col-sm">
+            <p class="lead">The neural network thinks this is a:</p>
+            <div class="ml-2">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+                        <img src="{{small_image_base64|safe}}" class="small_image" />
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+                        <div class="giant_number">
+                            {{number}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/><br/>
+
+            <h2>Analysis Details:</h2>
+            <p class="lead">Pixel values:</p>
+            <div class="ml-2">
+                <table class="pixel_table">
+                    {% for r in pixel_array %}
+                    <tr>{% for c in r %}<td>{{c}}</td>{% endfor %}</tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    <div class="row section">
+        <div class="col-sm">
+            <h2>{% if submitted %}Try another image{% else %}Try it out:{% endif %}</h2>
+            <ol>
+                <li>Write a number on a piece of paper.</li>
+                <li>Click choose file below.</li>
+                <li>Take a picture, centering the number</li>
+                <li>Click Submit Image.</li>
+                <li>A neural network will read the image and tell you what it thinks the number is.</li>
+            </ol>
+            
+            <form method="POST" enctype="multipart/form-data" action=".">
+                {% csrf_token %}
+                <div class="input-group">
+                    <input type="file" id="picture_file" name="picture">
+                </div>
+                <div class="input-group">
+                    <button type="submit" class="btn btn-primary" >Submit Image</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

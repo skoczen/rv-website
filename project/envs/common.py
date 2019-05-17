@@ -36,7 +36,7 @@ SERVER_EMAIL = DEFAULT_FROM_EMAIL
 ALLOWED_HOSTS = [
     WEBSITE_DOMAIN,
     "127.0.0.1",
-    "ronan.inkandfeet.com",
+    # "ronan.inkandfeet.com",
 ]
 
 RESOURCES_URL = "./static/"
@@ -55,7 +55,8 @@ INSTALLED_APPS = [
     'django_celery_results',
 
     'image_reader',
-    'home',
+    'ml_models',
+    'website',
 ]
 WSGI_APPLICATION = 'WEBSITE.wsgi.application'
 
@@ -152,6 +153,27 @@ COMPRESS_JS_FILTERS = (
 )
 COMPRESS_ENABLED = True
 HTML_MINIFY = True
+
+# Templates
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'OPTIONS': {
+            'loaders': [
+                'django.template.loaders.filesystem.Loader',
+                'django.template.loaders.app_directories.Loader',
+            ],
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
