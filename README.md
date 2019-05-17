@@ -53,7 +53,7 @@ docker-compose up -d
 
 ```bash
 cd ~/code/website
-docker-compose logs -f
+docker-compose logs -f --tail=50
 ```
 
 ## SSH into the docker container
