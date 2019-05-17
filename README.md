@@ -64,5 +64,5 @@ docker-compose run  --rm --label traefik.enable=false project bash
 
 ## Styling and Libraries:
 
-Website is built in [Django](https://www.djangoproject.com/)
-Styling uses [Bootstrap 4.1](https://getbootstrap.com/docs/4.1/)
+- Website is built in [Django](https://www.djangoproject.com/)
+- Styling uses [Bootstrap 4.1](https://getbootstrap.com/docs/4.1/)
