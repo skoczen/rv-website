@@ -90,8 +90,6 @@ ROOT_HOSTCONF = 'website.hosts'
 DEFAULT_HOST = 'root'
 SITE_ID = 1
 
-AUTH_USER_MODEL = 'clubhouse.StaffMember'
-
 SESSION_ENGINE = "django.contrib.sessions.backends.cached_db"
 SESSION_SAVE_EVERY_REQUEST = True
 
