@@ -17,9 +17,6 @@ wget https://github.com/TentativeConvert/Syndicator/raw/master/unison-binaries/u
 cp unison-fsmonitor /usr/bin/unison-fsmonitor
 chmod u+x /usr/bin/unison
 chmod u+x /usr/bin/unison-fsmonitor
-cd
-mkdir code
-
 
 # Clone codebase
 mkdir -p code

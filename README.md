@@ -28,7 +28,7 @@ chmod +x bootstrap_server.sh
 cd ~/code/website
 export $(cat .env | xargs)
 docker network create $WEBSITE_DOMAIN 
-docker-compose up
+docker-compose up -d
 ```
 
 ### Updating to the latest code
