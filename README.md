@@ -9,8 +9,10 @@ Users can upload a picture of a hand-written number, and a neural network traine
 
 ## Setting up a blank server.
 1. Create a blank image, ssh in.
-2. ```bash
-curl https://raw.githubusercontent.com/skoczen/rv-website/master/bin/bootstrap_server.sh
+2. Run the following commands:
+
+```bash
+curl -O https://raw.githubusercontent.com/skoczen/rv-website/master/bin/bootstrap_server.sh
 chmod +x bootstrap_server.sh
 ./bootstrap_server.sh
 ```
