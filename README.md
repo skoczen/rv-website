@@ -36,4 +36,18 @@ docker-compose up -d
 ```bash
 cd ~/code/website
 git pull
+# If requirements.txt has changed,
+docker-compose build
+```
+
+### Viewing logs
+
+```bash
+cd ~/code/website
+docker-compose logs -f
+```
+
+## SSH into the docker container
+```bash
+docker-compose run  --rm --label traefik.enable=false project bash
 ```
