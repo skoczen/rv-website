@@ -85,8 +85,8 @@ IGNORABLE_404_URLS = [
     re.compile(r'^/phpmyadmin/'),
 ]
 
-ROOT_URLCONF = 'website.urls'
-ROOT_HOSTCONF = 'website.hosts'
+ROOT_URLCONF = 'project.urls'
+ROOT_HOSTCONF = 'project.hosts'
 DEFAULT_HOST = 'root'
 SITE_ID = 1
 
