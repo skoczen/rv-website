@@ -13,8 +13,8 @@
 #      ])
     
 #    model.compile(optimizer = 'adam',
-                 loss = 'sparse_categorical_crossentropy',
-                 metrics=['accuracy'])
+#                 loss = 'sparse_categorical_crossentropy',
+#                 metrics=['accuracy'])
 #    return model
 
 def guess_number(pixel_array):
