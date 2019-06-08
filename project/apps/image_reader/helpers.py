@@ -25,7 +25,8 @@ def turn_small_image_into_array(small_image):
     Takes a 28x28 image, and returns a 28x28 array of brightness values (0-1)
     """
     converted_image = small_image.convert("L")
-    pixel_array = numpy.array(converted_image)
+    inverted_image = ImageOps.invert(converted_image)
+    pixel_array = numpy.array(inverted_image)
     return pixel_array
 
 
