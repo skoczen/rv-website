@@ -24,5 +24,4 @@ def guess_number(pixel_array):
     checkpoint_path = os.path.join(settings.APPS_DIR, "ml_models", "checkpoint", "cp.ckpt")
     model.load_weights(checkpoint_path)
     
-    return model.predict(pixel_array)
-    return 0
+    return model.predict_classes(pixel_array.reshape(1,28,28))
