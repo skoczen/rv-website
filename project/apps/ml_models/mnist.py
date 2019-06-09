@@ -3,6 +3,7 @@ from tensorflow.keras import layers
 import numpy as np
 import pandas as pd
 import os
+from django.conf import settings
 
 def create_model():
     model = tf.keras.models.Sequential([
@@ -20,7 +21,8 @@ def create_model():
 def guess_number(pixel_array):
     
     model = create_model()
-    model.load_weights('../checkpoint/cp.ckpt')
+    checkpoint_path = os.path.join(settings.APPS_DIR, "ml_models", "checkpoint", "cp.ckpt")
+    model.load_weights(checkpoint_path)
     
     return model.predict(pixel_array)
     return 0
