@@ -20,7 +20,7 @@ def create_model():
 def guess_number(pixel_array):
     
     model = create_model()
-    model.load_weights('checkpoint/cp.ckpt')
+    model.load_weights('../checkpoint/cp.ckpt')
     
     return model.predict(pixel_array)
     return 0
