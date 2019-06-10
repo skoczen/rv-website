@@ -11,7 +11,7 @@ def home(request):
         image = request.FILES["picture"]
         small_image = turn_image_into_28px_image(image)
         pixel_array = turn_small_image_into_array(small_image)
-        number = guess_number(pixel_array)
+        number = guess_number(pixel_array)[0]
         small_image_base64 = image_as_base64(small_image)
 
         return {
