@@ -26,14 +26,14 @@ def turn_small_image_into_array(small_image):
     """
     converted_image = small_image.convert("L")
     pixel_array = numpy.array(converted_image)
-    inverted_array = numpy.array()
+    inverted_array = []
     for row in pixel_array:
-        inverted_row = numpy.array()
+        inverted_row = []
         for col in row:
-            inverted_row.append(255-col)
+            inverted_row.append(255 - col)
         inverted_array.append(inverted_row)
 
-    return pixel_array
+    return numpy.array(pixel_array)
 
 
 def image_as_base64(image_file, format='png'):
