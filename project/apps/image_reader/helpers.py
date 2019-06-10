@@ -33,7 +33,7 @@ def turn_small_image_into_array(small_image):
             inverted_row.append(255 - col)
         inverted_array.append(inverted_row)
 
-    return numpy.array(pixel_array)
+    return numpy.array(inverted_array)
 
 
 def image_as_base64(image_file, format='png'):
