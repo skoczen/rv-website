@@ -22,4 +22,7 @@ def home(request):
             "small_image_base64": small_image_base64,
             "image": image,
         }
-    return locals()
+
+    return {
+        "submitted": submitted,
+    }
