@@ -1,7 +1,7 @@
 import os
 import base64
 from io import BytesIO
-from PIL import Image, ImageOps, ImageEnhance
+from PIL import Image, ImageOps, ImageEnhance, ExifTags
 from tempfile import NamedTemporaryFile
 import numpy
 
@@ -12,9 +12,21 @@ def turn_image_into_28px_image(image_file):
     then surrounds it with 8px of white so the result is a 28x28 image.
     """
     orig = Image.open(image_file)
+    for orientation in ExifTags.TAGS.keys():
+        if ExifTags.TAGS[orientation]=='Orientation':
+            break
+    exif=dict(orig._getexif().items())
+
+    if exif[orientation] == 3:
+        orig=orig.rotate(180, expand=True)
+    elif exif[orientation] == 6:
+        orig=orig.rotate(270, expand=True)
+    elif exif[orientation] == 8:
+        orig=orig.rotate(90, expand=True)
     image_20 = ImageOps.fit(orig, (20, 20), Image.ANTIALIAS, 0, (0.5, 0.5))
-    image_20 = ImageEnhance.Brightness(image_20).enhance(2)
-    image_20 = ImageEnhance.Contrast(image_20).enhance(8)
+    image_20 = ImageEnhance.Brightness(image_20).enhance(1.5)
+    image_20 = ImageEnhance.Contrast(image_20).enhance(6)
+    
     image_28 = ImageOps.expand(image_20, border=4, fill='white')
     image_28_buffer = BytesIO()
     
