@@ -1,7 +1,7 @@
 import os
 import base64
 from io import BytesIO
-from PIL import Image, ImageOps
+from PIL import Image, ImageOps, ImageEnhance
 from tempfile import NamedTemporaryFile
 import numpy
 
@@ -13,8 +13,11 @@ def turn_image_into_28px_image(image_file):
     """
     orig = Image.open(image_file)
     image_20 = ImageOps.fit(orig, (20, 20), Image.ANTIALIAS, 0, (0.5, 0.5))
+    image_20 = ImageOps.grayscale(image_20)
+    image_20 = ImageEnhance.Contrast(image_20)
     image_28 = ImageOps.expand(image_20, border=4, fill='white')
     image_28_buffer = BytesIO()
+    
     image_28.save(image_28_buffer, format="PNG", quality=100)
     image_28_buffer.seek(0)
     return image_28
