@@ -11,7 +11,7 @@ certifi==2019.3.9
 chardet==3.0.4
 clint==0.4.1
 decorator==4.4.0
-Django==2.2.1
+Django==2.2.18
 django-annoying==0.10.4
 django-appconf==1.0.3
 django-celery-beat==1.4.0
