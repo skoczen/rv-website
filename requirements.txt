@@ -80,7 +80,7 @@ tensorflow-estimator==1.13.0
 termcolor==1.1.0
 traitlets==4.3.2
 ua-parser==0.8.0
-urllib3==1.25.2
+urllib3==1.26.5
 user-agents==2.0
 vine==1.3.0
 watchdog==0.8.2
